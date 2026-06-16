@@ -1,0 +1,44 @@
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: emails
+    ports:
+      - "5432:5432"
+    volumes:
+    - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - searxng
+    environment:
+      EMAIL_USER: ${EMAIL_USER}
+      EMAIL_PASS: ${EMAIL_PASSWORD}
+    volumes:
+    - ./backend/files:/app/files
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+  
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    ports:
+    - "8080:8080"
+    volumes:
+    - ./searxng/settings.yml:/etc/searxng/settings.yml
+    restart: unless-stopped
+
+volumes:
+  pgdata:

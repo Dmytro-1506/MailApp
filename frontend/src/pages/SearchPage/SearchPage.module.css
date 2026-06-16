@@ -1,0 +1,135 @@
+.page {
+    min-height: 100vh;
+    background-color: #0f1118;
+    color: #B0C4DE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.title {
+    font-size: 64px;
+    margin-bottom: 40px;
+    color: white;
+    text-align: center;
+}
+
+.searchBar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.input {
+    width: 420px;
+    padding: 14px 18px;
+    border: 1px solid #6495ED;
+    border-radius: 8px;
+    background-color: #2e3237;
+    color: white;
+    font-size: 18px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.input:focus {
+    box-shadow: 0 0 10px #6495ED;
+}
+
+.button {
+    padding: 14px 24px;
+    background-color: transparent;
+    color: #B0C4DE;
+    border: 1px solid #6495ED;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background-color: #6495ED;
+    color: white;
+    box-shadow: 0 0 12px #6495ED;
+}
+
+.loading,
+.empty {
+    color: #B0C4DE;
+    font-size: 20px;
+}
+
+.results {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.card {
+    background-color: #161a23;
+    border: 1px solid rgba(100, 149, 237, 0.3);
+    border-radius: 12px;
+    padding: 30px;
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: #6495ED;
+    box-shadow: 0 0 15px rgba(100, 149, 237, 0.3);
+}
+
+.resultTitle {
+    color: #B0C4DE;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.link {
+    color: #87CEFA;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.snippet {
+    color: #d7dbe3;
+    line-height: 1.8;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+
+    .title {
+        font-size: 42px;
+    }
+
+    .searchBar {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .input {
+        width: 100%;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .resultTitle {
+        font-size: 24px;
+    }
+
+    .snippet {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,18 @@
+use_default_settings: true
+
+server:
+  secret_key: "my-local-dev-key"
+  limiter: false   # IMPORTANT for local dev (disables blocking)
+  public_instance: false
+
+search:
+  formats:
+    - html
+    - json
+  safe_search: 0
+
+botdetection:
+  ip_limit:
+    enabled: false
+  ip_lists:
+    block_ip: []

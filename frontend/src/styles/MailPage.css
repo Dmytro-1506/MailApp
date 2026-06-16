@@ -1,0 +1,142 @@
+
+.send-box {
+    display: block;
+    border-bottom: 1px solid #B0C4DE;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.input {
+    margin-right: 20px;
+    text-align: center;
+    width: 400px;
+    padding: 10px 20px;
+    border: 1px solid #6495ED;
+    border-radius: 5px;
+    background-color: #2e3237;
+    color: #B0C4DE;
+    height: 45px;
+    font-size: 18px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+/* Placeholder color */
+.input::placeholder {
+    color: #B0C4DE;
+    opacity: 0.7;
+}
+
+/* Mouse over input */
+.input:hover {
+    border-color: #6495ED;
+    box-shadow: 0 0 5px #6495ED;
+}
+
+/* When input is selected */
+.input:focus {
+    outline: none;
+    border-color: #6495ED;
+    box-shadow: 0 0 8px #6495ED;
+}
+
+.button {
+    padding: 10px 20px;
+    border-color: #6495ED;
+    border-radius: 5px;
+    background-color: #2e3237;
+    color: #B0C4DE;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 45px;
+    font-size: 18px;
+}
+
+/* Mouse over button */
+.button:hover {
+    background-color: #6495ED;
+}
+
+/* While button is being clicked */
+.button:active {
+    background-color: #6495ED;
+    transform: scale(0.97);
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 25px;
+    color: #6495ED;
+    margin-left: 20px;
+}
+
+.sort-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: 20px;
+}
+
+.sort-label {
+    color: #B0C4DE;
+    font-size: 16px;
+}
+
+.sort-select {
+    width: 220px;
+    height: 45px;
+    padding: 0 15px;
+    border: 1px solid #6495ED;
+    border-radius: 5px;
+    background-color: #2e3237;
+    color: #B0C4DE;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sort-select:hover {
+    box-shadow: 0 0 5px #6495ED;
+}
+
+.sort-select:focus {
+    outline: none;
+    box-shadow: 0 0 8px #6495ED;
+}
+
+.sort-select option {
+    background-color: #2e3237;
+    color: #B0C4DE;
+}
+
+.delete-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #6495ED;
+    border-radius: 5px;
+    background-color: #2e3237;
+    color: #B0C4DE;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hover = danger color */
+.delete-button:hover {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
+}
+
+/* Click effect */
+.delete-button:active {
+    transform: scale(0.95);
+}
