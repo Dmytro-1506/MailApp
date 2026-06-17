@@ -196,7 +196,7 @@ const sendEmail = async () => {
 
           </div>
 
-        <table border={1} cellPadding={10}>
+        <table border={1} cellPadding={5}>
         <thead>
             <tr>
               <th>ID</th>
@@ -237,6 +237,7 @@ const sendEmail = async () => {
                 </td>
               </tr>
             ))}
+
           </tbody>
         </table>
       </div>

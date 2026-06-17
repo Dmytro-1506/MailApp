@@ -1,0 +1,60 @@
+.tableBox {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 30px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #151922;
+    border: 1px solid #2d3446;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table th {
+    background: #202736;
+    color: #89b4ff;
+    text-align: left;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #2d3446;
+}
+
+.table tbody tr {
+    transition: background 0.2s;
+}
+
+.table tbody tr:hover {
+    background: #1b2130;
+}
+
+.table a {
+    color: #89b4ff;
+    text-decoration: none;
+}
+
+.table a:hover {
+    text-decoration: underline;
+}
+
+.linkButton {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid #6495ed;
+    border-radius: 6px;
+    color: #6495ed;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.linkButton:hover {
+    background: #6495ed;
+    color: #fff;
+}
