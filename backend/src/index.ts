@@ -1,25 +1,53 @@
-import fs from "fs";
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { Pool } from "pg";
-import nodemailer from "nodemailer";
-import searchSearXNG from "./searxng";
+
+//import emailRoutes from "./routes/emailRoutes";
+import searchRoutes from "./routes/searchRoutes";
+//import companyRoutes from "./routes/companyRoutes";
+
+import { initDb } from "./utils/waitForDb";
 
 dotenv.config();
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
-// PostgreSQL connection
-const pool = new Pool({
-  host: "db",
-  port: 5432,
-  user: "postgres",
-  password: "postgres",
-  database: "emails"
-});
+//app.use("/emails", emailRoutes);
+
+app.use("/search", searchRoutes);
+
+//app.use("/companies", companyRoutes);
+
+async function start() {
+
+    await initDb();
+
+    app.listen(3000, () => {
+        console.log( "Backend running" );
+    });
+}
+
+start().catch(console.error);
+
+/*
+import fs from "fs";
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import nodemailer from "nodemailer";
+import searchSearXNG from "./searxng";
+import { pool } from "./db/pool";
+import { initDb } from "./utils/waitForDb";
+
+dotenv.config();
+initDb();
+
+const app = express();
+app.use(cors());
+app.use(express.json());
 
 
 // email transporter
@@ -32,20 +60,6 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASSWORD
   }
 });
-
-async function initDb() {
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS emails (
-      id SERIAL PRIMARY KEY,
-      to_email TEXT,
-      subject TEXT,
-      message TEXT,
-      created_at TIMESTAMP DEFAULT NOW()
-    );
-  `);
-
-  console.log("Emails table ready");
-}
 
 // send email endpoint
 app.post("/emails", async (req, res) => {
@@ -140,6 +154,45 @@ app.get("/search", async (req, res) => {
       return res.status(500).json({error: "Search failed"});
     }
 });
+
+app.get("/companies", async (_, res) => {
+
+  try {
+
+    const result = await pool.query(`
+      SELECT *
+      FROM companies
+      ORDER BY rating DESC
+      LIMIT 20
+      `);
+    
+    res.json(result.rows);
+    
+    } catch {
+      res.status(500).json({
+      error: "Failed"
+      });
+    }
+});
+
+app.post("/companies/test", async (_, res) => {
+
+  await pool.query(`
+    INSERT INTO companies
+    (name, city, website, rating)
+
+    VALUES
+
+    ('Example GmbH',
+    'Dortmund',
+    'https://example.com',
+    88)
+    `);
+
+    res.json({
+    success:true
+  });
+});
   
 async function waitForDb() {
 
@@ -171,3 +224,5 @@ startServer().catch((err) => {
   console.error("Startup failed:", err);
   process.exit(1);
 });
+*/
+
