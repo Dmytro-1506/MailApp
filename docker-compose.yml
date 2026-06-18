@@ -23,6 +23,8 @@ services:
       EMAIL_PASS: ${EMAIL_PASSWORD}
     volumes:
     - ./backend/files:/app/files
+    env_file:
+    - ./backend/.env
 
   frontend:
     build: ./frontend
