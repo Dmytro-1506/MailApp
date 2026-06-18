@@ -1,0 +1,63 @@
+.sendBox {
+    display: block;
+    border-bottom: 1px solid #B0C4DE;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.input {
+    margin-right: 20px;
+    text-align: center;
+    width: 400px;
+    padding: 10px 20px;
+    border: 1px solid #6495ED;
+    border-radius: 5px;
+    background-color: #2e3237;
+    color: #B0C4DE;
+    height: 45px;
+    font-size: 18px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+/* Placeholder color */
+.input::placeholder {
+    color: #B0C4DE;
+    opacity: 0.7;
+}
+
+/* Mouse over input */
+.input:hover {
+    border-color: #6495ED;
+    box-shadow: 0 0 5px #6495ED;
+}
+
+/* When input is selected */
+.input:focus {
+    outline: none;
+    border-color: #6495ED;
+    box-shadow: 0 0 8px #6495ED;
+}
+
+.button {
+    padding: 10px 20px;
+    border-color: #6495ED;
+    border-radius: 5px;
+    background-color: #2e3237;
+    color: #B0C4DE;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 45px;
+    font-size: 18px;
+}
+
+/* Mouse over button */
+.button:hover {
+    background-color: #6495ED;
+}
+
+/* While button is being clicked */
+.button:active {
+    background-color: #6495ED;
+    transform: scale(0.97);
+}

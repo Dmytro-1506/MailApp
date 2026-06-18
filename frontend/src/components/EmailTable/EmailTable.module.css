@@ -1,0 +1,76 @@
+.tableHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: #6495ED;
+    font-size: 26px;
+}
+
+.sortContainer {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.sortLabel {
+    color: #B0C4DE;
+}
+
+.sortSelect {
+    width: 220px;
+    height: 45px;
+    padding: 10px;
+    background: #2e3237;
+    color: #B0C4DE;
+    border: 1px solid #6495ED;
+    border-radius: 5px;
+}
+
+.table {
+    width: 100%;
+    border: 1px;
+    background: #2e3237;
+    color: #B0C4DE;
+}
+
+.table th {
+    background: #6495ED;
+    color: white;
+    padding: 10px;
+}
+
+.table td {
+    border: 1px solid #B0C4DE;
+}
+
+.table tr:hover {
+    background: rgba(100, 149, 237, 0.08);
+}
+
+.deleteButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #6495ED;
+    border-radius: 5px;
+    background-color: #2e3237;
+    color: #B0C4DE;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.deleteButton:hover {
+    background-color: #e74c3c;
+    background: #e74c3c;
+    color: white;
+}
+
+.deleteButton:active {
+    transform: scale(0.95);
+}

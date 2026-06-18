@@ -4,9 +4,9 @@ import { useSearch } from "../../hooks/useSearch";
 
 import styles from "./SearchPage.module.css";
 
-export default function SearchPage(){
+export default function SearchPage() {
 
-  const {companies, loading, search }=useSearch();
+  const { companies, loading, search } = useSearch();
 
   return(
 
