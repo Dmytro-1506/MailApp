@@ -5,15 +5,16 @@ import type { Company } from "../types/company";
 export function useSearch() {
 
     const [companies, setCompanies] = useState<Company[]>([]);
-    const [loading,setLoading]=useState(false);
+    const [loading, setLoading] = useState(false);
 
-    async function search( query: string ){
+    async function search( query: string ) {
 
         setLoading(true);
 
-        try{
+        try {
 
             const data = await searchCompanies(query);
+            console.log(data);
 
             setCompanies(data);
 

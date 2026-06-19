@@ -12,23 +12,15 @@ export default function SearchPage() {
 
     <div className={styles.page}>
 
-      <h1>
-      Search Companies
-      </h1>
+      <h1>Search Companies</h1>
 
-      <SearchInput
-      onSearch={search}
-      />
+      <SearchInput onSearch={search} />
 
       {loading && (
-      <p>
-      Searching...
-      </p>
+        <p>Searching...</p>
       )}
 
-      <CompanyTable
-      companies={companies}
-      />
+      <CompanyTable companies={companies} />
 
     </div>
   );
