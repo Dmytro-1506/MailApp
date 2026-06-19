@@ -11,9 +11,7 @@ export async function search( req: Request, res: Response ) {
 
             return res
                 .status(400)
-                .json({
-                    error: "Query required"
-                });
+                .json({ error: "Query required" });
         }
 
         const results = await searchCompanies( query );
@@ -22,16 +20,10 @@ export async function search( req: Request, res: Response ) {
 
     } catch (err) {
 
-        console.error(
-            "Search error:",
-            err
-        );
+        console.error( "Search error:", err );
 
         return res
             .status(500)
-            .json({
-                error:
-                    "Search failed"
-            });
+            .json({ error: "Search failed" });
     }
 }

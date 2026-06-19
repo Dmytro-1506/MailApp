@@ -7,8 +7,7 @@ type Props = {
 
 export default function SearchInput({ onSearch }: Props) {
 
-    const [query, setQuery] =
-        useState("");
+    const [query, setQuery] = useState("");
 
     function handleSearch() {
 

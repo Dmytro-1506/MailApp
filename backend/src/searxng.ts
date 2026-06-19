@@ -9,13 +9,9 @@ export default async function searchSearXNG(query: string) {
             params: {
                 q: query,
                 format: "json",
-            },
-            headers: {
-                "X-Forwarded-For":
-                    "127.18.0.1",
-
-                "X-Real-IP":
-                    "127.18.0.1",
+                engines: "google,duckduckgo,startpage",
+                categories: "general",
+                language: "de",
             },
             timeout: 10000,
         });

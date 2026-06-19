@@ -2,8 +2,6 @@ use_default_settings: true
 
 server:
   secret_key: "my-local-dev-key"
-  limiter: false   # IMPORTANT for local dev (disables blocking)
-  public_instance: false
 
 search:
   formats:
@@ -16,3 +14,17 @@ botdetection:
     enabled: false
   ip_lists:
     block_ip: []
+  link_token: false
+
+engines:
+  - name: google
+    disabled: false
+
+  - name: duckduckgo
+    disabled: false
+
+  - name: startpage
+    disabled: false
+
+  - name: brave
+    disabled: true
